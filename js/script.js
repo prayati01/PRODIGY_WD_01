@@ -1,6 +1,7 @@
 // Function to toggle the menu
 function toggleMenu() {
     const menu = document.querySelector('.menu');
+    //querySelector returns the first element within the document that matches the specified selector(s). 
     const nav = document.querySelector('.nav');
     menu.classList.toggle('active');
     nav.classList.toggle('active');
@@ -9,7 +10,8 @@ function toggleMenu() {
 // Function to change the background video based on the clicked car
 function changeVideo(name) {
     // Get all video elements
-    const videoElements = document.querySelectorAll('.bg-video');
+    const videoElements = document.querySelectorAll('.bg-video'); 
+    //querySelectorAll returns a static NodeList representing a list of elements matching the specified group of selectors.
 
     // Loop through video elements
     videoElements.forEach(video => {
@@ -29,6 +31,7 @@ function togglePlayPause() {
     const pause = document.querySelector('.pause');
     play.classList.toggle('active');
     pause.classList.toggle('active');
+    //classList.toggle() method adds the specified class if it is not present and removes it if it is.
 }
 
 // Video play and pause
