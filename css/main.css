@@ -7,7 +7,7 @@
 }
 
 :root {
-    --primary: #00c2de;
+    --primary: #00c2de; /*box-sizing: border-box; ensures that padding and border are included in the element's width and height.*/
 }
 body {
     background: #000000;
@@ -25,7 +25,7 @@ header {
     padding: 30px 100px;
     z-index: 1000;
 }
-
+/*Adds a decorative line below the header, using a linear gradient from the primary color to transparent.*/
 header::after {
     position: absolute;
     content: '';
@@ -37,7 +37,7 @@ header::after {
     background: linear-gradient(90deg, var(--primary), transparent);
 }
 
-
+/*Styles the logo text and image. */
 .logo {
     font-size: 30px;
     color: #ffffff;
@@ -45,9 +45,11 @@ header::after {
 
 .logo img {
     max-width: 200px;
-    filter: invert(1);
+    filter: invert(1); /*The image is inverted in color (useful for dark themes*/
 }
-
+/* used for styling year
+Styles the year text in the header with the "Racing Sans One" font, white color, and a large letter-spacing.
+*/
 header .year{
     font-family: 'Racing Sans One', cursive;
     font-size: 1em;
@@ -56,6 +58,7 @@ header .year{
     margin-top: 40px;
 }
 
+/*Styles the menu button with a background image and a smooth transition effect on hover or click.*/
 header .menu {
     position: relative;
     height: 30px;
@@ -68,6 +71,7 @@ header .menu {
     transition: all 0.3s; /* Add transition for smooth animation */
 }
 
+/*When the menu is active (clicked), it changes to a close icon with adjusted dimensions.*/
 header .menu.active {
     position: relative;
     height: 35px;
@@ -79,7 +83,8 @@ header .menu.active {
     cursor: pointer;
 }
 
-
+/*The navigation menu is positioned to the right, with a border using a linear gradient, and a backdrop blur effect. 
+The menu transitions smoothly when activated*/
 .nav{
     z-index: 200;
     position: absolute;
@@ -101,7 +106,7 @@ header .menu.active {
     transform-origin: right;
 }
 
-.nav.active {
+.nav.active { /*When the navigation menu is active, it expands and changes its border styling.*/
     top: 100px;
     width: 40%;
     height: 100px;
@@ -120,13 +125,13 @@ header .menu.active {
     position: relative;
     list-style: none;
     opacity: 0;
-    visibility: hidden;
+    visibility: hidden; /*The list items in the navigation start off hidden and become visible and animated when the menu is active.*/
     transform: translateY(-100px);
     transition: 0.5s;
 }
 
 
-.nav.active li {
+.nav.active li { /*Styles the links within the navigation menu, with a hover effect that adds a glowing shadow.*/
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
@@ -149,6 +154,8 @@ header .menu.active {
 .nav li a:hover {
     box-shadow: inset 0 0 20px rgba(0, 194, 222, 0.5);
 }
+
+/*The banner section spans the entire viewport height, with padding and a gradient overlay for a cinematic effect.*/
 .banner {
     position: relative;
     width: 100%;
@@ -187,7 +194,10 @@ header .menu.active {
     background: linear-gradient(var(--primary), var(--primary), transparent);
     z-index: 100;
 }
+
+
 /*bg video */
+/* A background video element is hidden by default but becomes visible when the active class is added.*/
 .banner .bg-video{
     display: noen;
     position: absolute;
@@ -423,6 +433,9 @@ header .menu.active {
     font-size: 4em; /* Adjust the font size as desired */
     cursor: pointer;
     z-index: 100;
+    /*                z-index property controls the stacking order of elements on the z-axis (depth) of the webpage. 
+                        Elements with a higher z-index appear above those with a lower z-index.*/
+
     opacity: 0.3;
     transition: 0.3s;
 }
